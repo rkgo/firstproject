@@ -1,0 +1,124 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background);
+  position: relative;
+  overflow: hidden;
+  /* Add scroll-snap for smooth section transitions */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.hero__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 var(--spacing-container-gutters-desktop);
+  gap: 2rem; /* Reduced from 4rem for tighter spacing */
+}
+
+.hero__text {
+  flex: 1;
+  max-width: 600px;
+  transform: translateX(-100px); /* Moved hero text 100 spaces to the left */
+}
+
+.hero__title {
+  font-size: clamp(2.3rem, 5vw, 3.5rem); /* Increased by 5 from 1.8rem, 4vw, 3rem */
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+  font-family: var(--font-family-display);
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  letter-spacing: -0.02em;
+}
+
+.hero__caret {
+  display: inline-block !important;
+  width: 3px !important;
+  height: 1em !important;
+  margin-left: 8px !important;
+  background: var(--color-accent-primary) !important;
+  animation: blink 1s steps(1) infinite !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Remove any CSS-generated carets */
+.hero__title::after,
+.hero__title::before {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Ensure no other carets are generated */
+.hero__title *::after,
+.hero__title *::before {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.hero__circular {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 600px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  transform: translateX(100px);
+}
+
+.hero-circular-text {
+  /* Custom styles for hero circular text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero__content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .hero__text {
+    max-width: 100%;
+  }
+  
+  .hero__circular {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__content {
+    padding: 0 var(--spacing-container-gutters-mobile);
+    gap: 2rem;
+  }
+  
+  .hero__circular {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__circular {
+    max-width: 250px;
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}

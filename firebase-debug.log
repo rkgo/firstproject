@@ -1,0 +1,180 @@
+[debug] [2025-08-14T13:01:45.990Z] ----------------------------------------------------------------------
+[debug] [2025-08-14T13:01:45.993Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gopiu\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2025-08-14T13:01:45.993Z] CLI Version:   14.12.0
+[debug] [2025-08-14T13:01:45.994Z] Platform:      win32
+[debug] [2025-08-14T13:01:45.994Z] Node Version:  v22.18.0
+[debug] [2025-08-14T13:01:45.994Z] Time:          Thu Aug 14 2025 09:01:45 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-08-14T13:01:45.994Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-14T13:01:46.212Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-14T13:01:46.212Z] > authorizing via signed-in user (ramakrishnan.gopinath2006@gmail.com)
+[debug] [2025-08-14T13:01:46.212Z] [iam] checking project portfolio-project-website-rkg for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-08-14T13:01:46.213Z] Checked if tokens are valid: false, expires at: 1755172252587
+[debug] [2025-08-14T13:01:46.213Z] Checked if tokens are valid: false, expires at: 1755172252587
+[debug] [2025-08-14T13:01:46.214Z] > refreshing access token with scopes: []
+[debug] [2025-08-14T13:01:46.215Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-08-14T13:01:46.215Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-14T13:01:46.406Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-08-14T13:01:46.406Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-14T13:01:46.414Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions [none]
+[debug] [2025-08-14T13:01:46.414Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions x-goog-quota-user=projects/portfolio-project-website-rkg
+[debug] [2025-08-14T13:01:46.414Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-14T13:01:46.560Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions 200
+[debug] [2025-08-14T13:01:46.560Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-14T13:01:46.561Z] Checked if tokens are valid: true, expires at: 1755180105406
+[debug] [2025-08-14T13:01:46.561Z] Checked if tokens are valid: true, expires at: 1755180105406
+[debug] [2025-08-14T13:01:46.561Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-project-website-rkg [none]
+[debug] [2025-08-14T13:01:46.812Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-project-website-rkg 200
+[debug] [2025-08-14T13:01:46.812Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-project-website-rkg {"projectId":"portfolio-project-website-rkg","projectNumber":"213977800959","displayName":"portfolio","name":"projects/portfolio-project-website-rkg","resources":{"hostingSite":"portfolio-project-website-rkg"},"state":"ACTIVE","etag":"1_471dbdc3-1ec8-4234-ad2f-8773e49bf8e7"}
+[info] 
+[info] === Deploying to 'portfolio-project-website-rkg'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-08-14T13:01:46.817Z] Checked if tokens are valid: true, expires at: 1755180105406
+[debug] [2025-08-14T13:01:46.817Z] Checked if tokens are valid: true, expires at: 1755180105406
+[debug] [2025-08-14T13:01:46.817Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions [none]
+[debug] [2025-08-14T13:01:46.817Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-08-14T13:01:47.343Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions 200
+[debug] [2025-08-18T03:53:35.043Z] ----------------------------------------------------------------------
+[debug] [2025-08-18T03:53:35.048Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gopiu\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --debug
+[debug] [2025-08-18T03:53:35.049Z] CLI Version:   14.12.0
+[debug] [2025-08-18T03:53:35.049Z] Platform:      win32
+[debug] [2025-08-18T03:53:35.049Z] Node Version:  v22.18.0
+[debug] [2025-08-18T03:53:35.049Z] Time:          Sun Aug 17 2025 23:53:35 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-08-18T03:53:35.049Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-18T03:53:35.052Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-08-18T03:53:35.338Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-18T03:53:35.339Z] > authorizing via signed-in user (ramakrishnan.gopinath2006@gmail.com)
+[debug] [2025-08-18T03:53:35.339Z] [iam] checking project portfolio-project-website-rkg for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-08-18T03:53:35.340Z] Checked if tokens are valid: false, expires at: 1755180105406
+[debug] [2025-08-18T03:53:35.341Z] Checked if tokens are valid: false, expires at: 1755180105406
+[debug] [2025-08-18T03:53:35.342Z] > refreshing access token with scopes: []
+[debug] [2025-08-18T03:53:35.344Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-08-18T03:53:35.345Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-18T03:53:35.492Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-08-18T03:53:35.493Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-08-18T03:53:35.521Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-08-18T03:53:35.521Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-18T03:53:35.534Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions [none]
+[debug] [2025-08-18T03:53:35.534Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions x-goog-quota-user=projects/portfolio-project-website-rkg
+[debug] [2025-08-18T03:53:35.535Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-18T03:53:35.766Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions 200
+[debug] [2025-08-18T03:53:35.766Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-project-website-rkg:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-18T03:53:35.767Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:35.768Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:35.768Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-project-website-rkg [none]
+[debug] [2025-08-18T03:53:36.065Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-project-website-rkg 200
+[debug] [2025-08-18T03:53:36.065Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-project-website-rkg {"projectId":"portfolio-project-website-rkg","projectNumber":"213977800959","displayName":"portfolio","name":"projects/portfolio-project-website-rkg","resources":{"hostingSite":"portfolio-project-website-rkg"},"state":"ACTIVE","etag":"1_471dbdc3-1ec8-4234-ad2f-8773e49bf8e7"}
+[info] 
+[info] === Deploying to 'portfolio-project-website-rkg'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-08-18T03:53:36.071Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:36.071Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:36.071Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions [none]
+[debug] [2025-08-18T03:53:36.072Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-08-18T03:53:36.605Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions 200
+[debug] [2025-08-18T03:53:36.606Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions {"name":"projects/213977800959/sites/portfolio-project-website-rkg/versions/498b72abc424e955","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[portfolio-project-website-rkg]: beginning deploy... 
+[info] i  hosting[portfolio-project-website-rkg]: found 15 files in build 
+[debug] [2025-08-18T03:53:36.623Z] [hosting] uploading with 200 concurrency
+[debug] [2025-08-18T03:53:36.787Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:36.788Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:36.789Z] [hosting] hash cache [YnVpbGQ] stored for 15 files
+[debug] [2025-08-18T03:53:36.790Z] [hosting][hash queue][FINAL] {"max":162,"min":3,"avg":23.4,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":165}
+[debug] [2025-08-18T03:53:36.790Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/213977800959/sites/portfolio-project-website-rkg/versions/498b72abc424e955:populateFiles [none]
+[debug] [2025-08-18T03:53:36.791Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/213977800959/sites/portfolio-project-website-rkg/versions/498b72abc424e955:populateFiles {"files":{"/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/manifest.json":"ee04fb47e525c67d8424ffe9b4d8a8a24e434504478afca4e0ca602146836d4c","/logo512.png":"212b102aa09e51b3b3e06647e81f7801a61333e171f6582e8124379aabccb41d","/logo192.png":"79e2b749561016bc8af300ea19f48347ceed3cb1a54f48ae456172eca45e08f0","/favicon.ico":"27edce7be5922cf0bef7d4136f69b5bfbdd5bf8c13c7b026f71187d41a00aa7d","/index.html":"c008a5d3885aa4546b554a12b8c4e6adb5beee5d84b00a2d0e0652ec38030fde","/asset-manifest.json":"a4927d32f46939831604b5e4b8e05aa50dff0c10475e118770016aa5a74c524e","/static/js/main.74edfc8c.js.LICENSE.txt":"ebb955790131b63156f7f1d15240d328171a58be63d822f12db953b3d6e41eec","/static/js/488.d0946ee8.chunk.js.map":"389877920675070db7cd69d53635f1f55c401d2a4af86db42a3885affe7383e8","/static/js/488.d0946ee8.chunk.js":"ba5e6bfa70788d2b80499a5ea5550644e9e7d8f45cdb8dac170d26d581a191f4","/static/css/main.7ab04265.css":"55a5fcfcf63d488bfd18122a66efd26bbf46087e038be639cf564200aa33dbc0","/static/css/main.7ab04265.css.map":"7e34fea16b727a37d5927245861067515aad5ac5d0f87df9aa935e31fe19a33d","/static/js/main.74edfc8c.js":"fb0122c0a2461bfff2012cb21ba4e2ff2ac496bdca2933c4dc054fc471452d06","/static/js/main.74edfc8c.js.map":"28b8f784d76d9d8f4f9a50849756e88205ce5c42ff0125d7075c1fd64fec4b06","/picture of me transparent.png":"c34d208c0fae6563e477eb3c3f1a386c57546337f47daba32f0346793bde0273"}}
+[debug] [2025-08-18T03:53:36.993Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/213977800959/sites/portfolio-project-website-rkg/versions/498b72abc424e955:populateFiles 200
+[debug] [2025-08-18T03:53:36.995Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/213977800959/sites/portfolio-project-website-rkg/versions/498b72abc424e955:populateFiles {"uploadRequiredHashes":["28b8f784d76d9d8f4f9a50849756e88205ce5c42ff0125d7075c1fd64fec4b06","fb0122c0a2461bfff2012cb21ba4e2ff2ac496bdca2933c4dc054fc471452d06","7e34fea16b727a37d5927245861067515aad5ac5d0f87df9aa935e31fe19a33d","c34d208c0fae6563e477eb3c3f1a386c57546337f47daba32f0346793bde0273","55a5fcfcf63d488bfd18122a66efd26bbf46087e038be639cf564200aa33dbc0","c008a5d3885aa4546b554a12b8c4e6adb5beee5d84b00a2d0e0652ec38030fde","a4927d32f46939831604b5e4b8e05aa50dff0c10475e118770016aa5a74c524e"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files"}
+[debug] [2025-08-18T03:53:36.997Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:36.998Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:36.999Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:36.999Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.000Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.000Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.001Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.001Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.001Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.002Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.002Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.003Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.003Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.003Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:37.004Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/28b8f784d76d9d8f4f9a50849756e88205ce5c42ff0125d7075c1fd64fec4b06 [none]
+[debug] [2025-08-18T03:53:37.004Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/28b8f784d76d9d8f4f9a50849756e88205ce5c42ff0125d7075c1fd64fec4b06 [stream]
+[debug] [2025-08-18T03:53:37.006Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/fb0122c0a2461bfff2012cb21ba4e2ff2ac496bdca2933c4dc054fc471452d06 [none]
+[debug] [2025-08-18T03:53:37.006Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/fb0122c0a2461bfff2012cb21ba4e2ff2ac496bdca2933c4dc054fc471452d06 [stream]
+[debug] [2025-08-18T03:53:37.008Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/7e34fea16b727a37d5927245861067515aad5ac5d0f87df9aa935e31fe19a33d [none]
+[debug] [2025-08-18T03:53:37.008Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/7e34fea16b727a37d5927245861067515aad5ac5d0f87df9aa935e31fe19a33d [stream]
+[debug] [2025-08-18T03:53:37.012Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/c34d208c0fae6563e477eb3c3f1a386c57546337f47daba32f0346793bde0273 [none]
+[debug] [2025-08-18T03:53:37.013Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/c34d208c0fae6563e477eb3c3f1a386c57546337f47daba32f0346793bde0273 [stream]
+[debug] [2025-08-18T03:53:37.015Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/55a5fcfcf63d488bfd18122a66efd26bbf46087e038be639cf564200aa33dbc0 [none]
+[debug] [2025-08-18T03:53:37.016Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/55a5fcfcf63d488bfd18122a66efd26bbf46087e038be639cf564200aa33dbc0 [stream]
+[debug] [2025-08-18T03:53:37.017Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/c008a5d3885aa4546b554a12b8c4e6adb5beee5d84b00a2d0e0652ec38030fde [none]
+[debug] [2025-08-18T03:53:37.017Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/c008a5d3885aa4546b554a12b8c4e6adb5beee5d84b00a2d0e0652ec38030fde [stream]
+[debug] [2025-08-18T03:53:37.018Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/a4927d32f46939831604b5e4b8e05aa50dff0c10475e118770016aa5a74c524e [none]
+[debug] [2025-08-18T03:53:37.019Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/a4927d32f46939831604b5e4b8e05aa50dff0c10475e118770016aa5a74c524e [stream]
+[debug] [2025-08-18T03:53:37.020Z] [hosting][populate queue][FINAL] {"max":217,"min":217,"avg":217,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":233}
+[debug] [2025-08-18T03:53:37.021Z] [hosting] uploads queued: 7
+[debug] [2025-08-18T03:53:37.629Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/55a5fcfcf63d488bfd18122a66efd26bbf46087e038be639cf564200aa33dbc0 200
+[debug] [2025-08-18T03:53:37.630Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/55a5fcfcf63d488bfd18122a66efd26bbf46087e038be639cf564200aa33dbc0 [stream]
+[debug] [2025-08-18T03:53:37.644Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/28b8f784d76d9d8f4f9a50849756e88205ce5c42ff0125d7075c1fd64fec4b06 200
+[debug] [2025-08-18T03:53:37.646Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/28b8f784d76d9d8f4f9a50849756e88205ce5c42ff0125d7075c1fd64fec4b06 [stream]
+[debug] [2025-08-18T03:53:37.696Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/c008a5d3885aa4546b554a12b8c4e6adb5beee5d84b00a2d0e0652ec38030fde 200
+[debug] [2025-08-18T03:53:37.697Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/c008a5d3885aa4546b554a12b8c4e6adb5beee5d84b00a2d0e0652ec38030fde [stream]
+[debug] [2025-08-18T03:53:37.801Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/fb0122c0a2461bfff2012cb21ba4e2ff2ac496bdca2933c4dc054fc471452d06 200
+[debug] [2025-08-18T03:53:37.802Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/fb0122c0a2461bfff2012cb21ba4e2ff2ac496bdca2933c4dc054fc471452d06 [stream]
+[debug] [2025-08-18T03:53:37.953Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/7e34fea16b727a37d5927245861067515aad5ac5d0f87df9aa935e31fe19a33d 200
+[debug] [2025-08-18T03:53:37.953Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/7e34fea16b727a37d5927245861067515aad5ac5d0f87df9aa935e31fe19a33d [stream]
+[debug] [2025-08-18T03:53:38.305Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/c34d208c0fae6563e477eb3c3f1a386c57546337f47daba32f0346793bde0273 200
+[debug] [2025-08-18T03:53:38.305Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/c34d208c0fae6563e477eb3c3f1a386c57546337f47daba32f0346793bde0273 [stream]
+[debug] [2025-08-18T03:53:38.464Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/a4927d32f46939831604b5e4b8e05aa50dff0c10475e118770016aa5a74c524e 200
+[debug] [2025-08-18T03:53:38.465Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-project-website-rkg/versions/498b72abc424e955/files/a4927d32f46939831604b5e4b8e05aa50dff0c10475e118770016aa5a74c524e [stream]
+[debug] [2025-08-18T03:53:38.465Z] [hosting][upload queue][FINAL] {"max":1462,"min":629,"avg":928.5714285714286,"active":0,"complete":7,"success":7,"errored":0,"retried":0,"total":7,"elapsed":1469}
+[info] i  hosting: upload complete 
+[info] +  hosting[portfolio-project-website-rkg]: file upload complete 
+[debug] [2025-08-18T03:53:38.467Z] [hosting] deploy completed after 1858ms
+[debug] [2025-08-18T03:53:38.467Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "portfolio-project-website-rkg"
+    },
+    "version": "projects/213977800959/sites/portfolio-project-website-rkg/versions/498b72abc424e955"
+  }
+]
+[info] i  hosting[portfolio-project-website-rkg]: finalizing version... 
+[debug] [2025-08-18T03:53:38.469Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:38.469Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:38.470Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions/498b72abc424e955 updateMask=status%2Cconfig
+[debug] [2025-08-18T03:53:38.470Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions/498b72abc424e955 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2025-08-18T03:53:38.597Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions/498b72abc424e955 200
+[debug] [2025-08-18T03:53:38.598Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/versions/498b72abc424e955 {"name":"projects/213977800959/sites/portfolio-project-website-rkg/versions/498b72abc424e955","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-18T03:53:37.413571Z","createUser":{"email":"ramakrishnan.gopinath2006@gmail.com"},"finalizeTime":"2025-08-18T03:53:39.601745Z","finalizeUser":{"email":"ramakrishnan.gopinath2006@gmail.com"}}
+[debug] [2025-08-18T03:53:38.598Z] [hosting] finalized version for portfolio-project-website-rkg:[object Object]
+[info] +  hosting[portfolio-project-website-rkg]: version finalized 
+[info] i  hosting[portfolio-project-website-rkg]: releasing new version... 
+[debug] [2025-08-18T03:53:38.600Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:38.600Z] Checked if tokens are valid: true, expires at: 1755492814522
+[debug] [2025-08-18T03:53:38.600Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/channels/live/releases versionName=projects%2F213977800959%2Fsites%2Fportfolio-project-website-rkg%2Fversions%2F498b72abc424e955
+[debug] [2025-08-18T03:53:38.600Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/channels/live/releases {}
+[debug] [2025-08-18T03:53:38.797Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/channels/live/releases 200
+[debug] [2025-08-18T03:53:38.798Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-project-website-rkg/channels/live/releases {"name":"projects/213977800959/sites/portfolio-project-website-rkg/channels/live/releases/1755489219247000","version":{"name":"projects/213977800959/sites/portfolio-project-website-rkg/versions/498b72abc424e955","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-18T03:53:37.413571Z","createUser":{"email":"ramakrishnan.gopinath2006@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIszWNaayIZZ2kY9smh5qyt_QS1HjWU-x6r_-_HTxDSG5rLLhXc"},"finalizeTime":"2025-08-18T03:53:39.601745Z","finalizeUser":{"email":"ramakrishnan.gopinath2006@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIszWNaayIZZ2kY9smh5qyt_QS1HjWU-x6r_-_HTxDSG5rLLhXc"}},"type":"DEPLOY","releaseTime":"2025-08-18T03:53:39.247Z","releaseUser":{"email":"ramakrishnan.gopinath2006@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIszWNaayIZZ2kY9smh5qyt_QS1HjWU-x6r_-_HTxDSG5rLLhXc"}}
+[debug] [2025-08-18T03:53:38.799Z] [hosting] release: {"name":"projects/213977800959/sites/portfolio-project-website-rkg/channels/live/releases/1755489219247000","version":{"name":"projects/213977800959/sites/portfolio-project-website-rkg/versions/498b72abc424e955","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-18T03:53:37.413571Z","createUser":{"email":"ramakrishnan.gopinath2006@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIszWNaayIZZ2kY9smh5qyt_QS1HjWU-x6r_-_HTxDSG5rLLhXc"},"finalizeTime":"2025-08-18T03:53:39.601745Z","finalizeUser":{"email":"ramakrishnan.gopinath2006@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIszWNaayIZZ2kY9smh5qyt_QS1HjWU-x6r_-_HTxDSG5rLLhXc"}},"type":"DEPLOY","releaseTime":"2025-08-18T03:53:39.247Z","releaseUser":{"email":"ramakrishnan.gopinath2006@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIszWNaayIZZ2kY9smh5qyt_QS1HjWU-x6r_-_HTxDSG5rLLhXc"}}
+[info] +  hosting[portfolio-project-website-rkg]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/portfolio-project-website-rkg/overview
+[info] Hosting URL: https://portfolio-project-website-rkg.web.app
