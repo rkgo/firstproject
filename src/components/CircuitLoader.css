@@ -1,0 +1,398 @@
+.circuit-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(3, 0, 8, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.circuit-loader__svg {
+  filter: drop-shadow(0 0 20px rgba(111, 229, 228, 0.3));
+}
+
+/* Battery Animation */
+.battery-container {
+  animation: battery-pulse 2s ease-in-out infinite;
+}
+
+.battery-container.charged {
+  animation: battery-charged 0.5s ease-out;
+}
+
+@keyframes battery-charged {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.5) drop-shadow(0 0 10px rgba(111, 229, 228, 0.8));
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1.2) drop-shadow(0 0 5px rgba(111, 229, 228, 0.6));
+  }
+}
+
+.battery-text {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  animation: text-flicker 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes battery-pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Current Flow Animation */
+.current-particle {
+  animation: current-flow 2s linear infinite;
+}
+
+@keyframes current-flow {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/* LED Pulse Animation */
+.led-pulse {
+  animation: led-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes led-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+}
+
+/* Power Source Glow */
+.power-source {
+  animation: power-glow 3s ease-in-out infinite;
+}
+
+@keyframes power-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(111, 229, 228, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(111, 229, 228, 0.8));
+  }
+}
+
+/* Oscilloscope Wave Animation */
+.oscilloscope path {
+  stroke-dasharray: 2, 2;
+  animation: wave-dash 1s linear infinite;
+}
+
+@keyframes wave-dash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 4;
+  }
+}
+
+/* Microcontroller Animation - Subtle only */
+.microcontroller {
+  animation: mcu-process 3s ease-in-out infinite;
+}
+
+.microcontroller rect {
+  fill: rgba(60, 60, 60, 0.8) !important;
+  stroke: #6FE5E4 !important;
+  stroke-width: 2 !important;
+  rx: 2 !important;
+}
+
+@keyframes mcu-process {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.05);
+  }
+}
+
+/* LED Blinking Animation */
+.led-blink {
+  animation: led-blink 1.2s ease-in-out infinite;
+}
+
+@keyframes led-blink {
+  0%, 100% {
+    opacity: 0.4;
+    filter: brightness(0.8);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+}
+
+/* Resistor Heat Effect - Disabled */
+.resistors rect {
+  /* animation: resistor-heat 3s ease-in-out infinite; */
+}
+
+/* Crystal Oscillation - Disabled */
+.crystal {
+  /* animation: crystal-oscillate 2s ease-in-out infinite; */
+}
+
+/* Circuit Trace Glow - Disabled */
+.circuit-loader__svg path {
+  /* animation: trace-glow 4s ease-in-out infinite; */
+}
+
+/* Ensure no circuit traces inside CPU area */
+.cpu {
+  isolation: isolate;
+}
+
+.cpu path {
+  display: none !important;
+}
+
+@keyframes trace-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(111, 229, 228, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(111, 229, 228, 0.6));
+  }
+}
+
+/* Resistor Heat Effect */
+.circuit-loader__svg rect[fill="#6FE5E4"] {
+  animation: resistor-heat 3s ease-in-out infinite;
+}
+
+@keyframes resistor-heat {
+  0%, 100% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    filter: hue-rotate(20deg) brightness(1.3);
+  }
+}
+
+/* Loading Text */
+.circuit-loader__text {
+  margin-top: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+  animation: text-pulse 2s ease-in-out infinite;
+  text-transform: uppercase;
+}
+
+@keyframes text-pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Overlay Variant */
+.circuit-loader--overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(3, 0, 8, 0.98) !important;
+  backdrop-filter: blur(15px) !important;
+  z-index: 9999 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+.circuit-loader--overlay .circuit-loader__svg {
+  width: 500px;
+  height: 375px;
+  filter: drop-shadow(0 0 30px rgba(111, 229, 228, 0.4));
+  margin: 0 auto;
+  display: block;
+}
+
+.circuit-loader--overlay .circuit-loader__text {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Fade Animations */
+.circuit-loader--fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.circuit-loader--fade-out {
+  animation: fadeOut 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8) rotate(5deg);
+  }
+}
+
+/* Size Variants */
+.circuit-loader--small {
+  width: 150px;
+  height: 150px;
+  padding: 1rem;
+}
+
+.circuit-loader--small .circuit-loader__svg {
+  width: 150px;
+  height: 150px;
+}
+
+.circuit-loader--large {
+  width: 400px;
+  height: 400px;
+  padding: 3rem;
+}
+
+.circuit-loader--large .circuit-loader__svg {
+  width: 400px;
+  height: 400px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .circuit-loader--overlay .circuit-loader__svg {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .circuit-loader--overlay .circuit-loader__text {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .circuit-loader--overlay .circuit-loader__svg {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .circuit-loader--overlay .circuit-loader__text {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .circuit-loader__svg *,
+  .battery-container,
+  .battery-text,
+  .current-particle,
+  .led-pulse,
+  .power-source,
+  .oscilloscope path,
+  .cpu,
+  .circuit-loader__text {
+    animation: none;
+  }
+  
+  .circuit-loader--fade-in,
+  .circuit-loader--fade-out {
+    animation: none;
+  }
+}
+
+/* Glitch Effect for Tech Feel */
+.circuit-loader--glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(360deg);
+  }
+}

@@ -1,0 +1,331 @@
+.tree-timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.tree-timeline__trunk {
+  position: relative;
+  width: 4px;
+  min-height: 400vh;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    var(--accent) 10%, 
+    var(--accent) 90%, 
+    transparent 100%
+  );
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(111, 229, 228, 0.3);
+}
+
+.tree-timeline__branch {
+  position: relative;
+  width: 100%;
+  margin: 120px 0;
+  display: flex;
+  align-items: center;
+}
+
+.tree-timeline__branch--left {
+  justify-content: flex-start;
+}
+
+.tree-timeline__branch--left::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(to left, var(--accent), transparent);
+  transform: translateY(-50%);
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(111, 229, 228, 0.5);
+}
+
+.tree-timeline__branch--right {
+  justify-content: flex-end;
+  padding-right: 200px;
+}
+
+.nist-card .tree-timeline__node {
+  transform: translateX(250px) !important;
+}
+
+.nist-card .tree-timeline__node-dot {
+  left: 2px !important;
+  right: auto !important;
+}
+
+.nist-card::before {
+  width: 250px !important;
+  background: var(--accent) !important;
+}
+
+.cloudware-card .tree-timeline__node {
+  transform: translateX(250px) !important;
+}
+
+.cloudware-card .tree-timeline__node-dot {
+  left: 2px !important;
+  right: auto !important;
+}
+
+.cloudware-card::before {
+  width: 250px !important;
+  background: var(--accent) !important;
+}
+
+.intel-card .tree-timeline__node {
+  transform: translateX(250px) !important;
+}
+
+.intel-card .tree-timeline__node-dot {
+  left: 2px !important;
+  right: auto !important;
+}
+
+.intel-card::before {
+  width: 250px !important;
+  background: var(--accent) !important;
+}
+
+/* Specific styles for Engineers Without Borders card */
+.ewb-card .tree-timeline__node {
+  transform: translateX(-250px) !important; /* Moves the card 250px to the left */
+}
+.ewb-card .tree-timeline__node-dot {
+  right: -16px !important; /* Dot 4px to the right from previous position */
+  left: auto !important;
+}
+.ewb-card::before {
+  width: 250px !important; /* Branch length 250px */
+  background: var(--accent) !important;
+  left: calc(50% - 350px) !important; /* Move line 350px to the LEFT from center */
+}
+
+/* Specific styles for Solar Powered RIS card */
+.solar-card .tree-timeline__node {
+  transform: translateX(-250px) !important; /* Moves the card 250px to the left */
+}
+.solar-card .tree-timeline__node-dot {
+  right: -16px !important; /* Dot positioned same as EWB */
+  left: auto !important;
+}
+.solar-card::before {
+  width: 250px !important; /* Branch length 250px */
+  background: var(--accent) !important;
+  left: calc(50% - 350px) !important; /* Move line 350px to the LEFT from center */
+}
+
+.tree-timeline__branch--right::before {
+  content: '';
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent), transparent);
+  transform: translateY(-50%);
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(111, 229, 228, 0.5);
+}
+
+.tree-timeline__node {
+  position: relative;
+  width: 500px;
+  max-width: 500px;
+  min-width: 500px;
+}
+
+.tree-timeline__branch--left .tree-timeline__node {
+  margin-right: 200px;
+}
+
+.tree-timeline__node-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(111, 229, 228, 0.5);
+  z-index: 3;
+}
+
+.tree-timeline__content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+.tree-timeline__content:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.tree-timeline__type {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 6px 16px;
+  border-radius: 25px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  border: 1px solid var(--accent);
+}
+
+.tree-timeline__title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.tree-timeline__subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.tree-timeline__period {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+}
+
+.tree-timeline__description {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tree-timeline {
+    padding: 20px 10px;
+  }
+  
+  .tree-timeline__trunk {
+    width: 3px;
+  }
+  
+  .tree-timeline__branch {
+    margin: 80px 0;
+  }
+  
+  .tree-timeline__branch--left .tree-timeline__node {
+    margin-right: 120px;
+  }
+  
+  .tree-timeline__branch--right {
+    padding-right: 120px;
+  }
+  
+  .tree-timeline__branch--left::before {
+    width: 120px;
+  }
+  
+  .tree-timeline__branch--right::before {
+    width: 120px;
+  }
+  
+  .tree-timeline__node {
+    width: 90%;
+    max-width: 400px;
+    min-width: 300px;
+  }
+  
+  .tree-timeline__content {
+    padding: 24px;
+  }
+  
+  .tree-timeline__title {
+    font-size: 1.2rem;
+  }
+  
+  .tree-timeline__subtitle {
+    font-size: 1rem;
+  }
+  
+  .tree-timeline__period {
+    font-size: 0.85rem;
+  }
+  
+  .tree-timeline__description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tree-timeline__branch--left .tree-timeline__node {
+    margin-right: 80px;
+  }
+  
+  .tree-timeline__branch--right {
+    padding-right: 80px;
+  }
+  
+  .tree-timeline__branch--left::before {
+    width: 80px;
+  }
+  
+  .tree-timeline__branch--right::before {
+    width: 80px;
+  }
+  
+  .tree-timeline__node {
+    width: 95%;
+    max-width: 350px;
+    min-width: 280px;
+  }
+  
+  .tree-timeline__content {
+    padding: 20px;
+  }
+  
+  .tree-timeline__title {
+    font-size: 1.1rem;
+  }
+  
+  .tree-timeline__subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .tree-timeline__period {
+    font-size: 0.8rem;
+  }
+  
+  .tree-timeline__description {
+    font-size: 0.8rem;
+  }
+}
+
+.tree-timeline__end-spacer {
+  height: 200vh;
+  width: 100%;
+}
