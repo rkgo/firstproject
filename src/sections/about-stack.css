@@ -8,10 +8,12 @@
   padding: 0;
   background: var(--bg);
   position: relative;
-  overflow: hidden;
-  scroll-snap-align: start;
+  overflow: visible;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
   scroll-snap-margin-top: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 .about-container {
@@ -34,6 +36,16 @@
 
 .about-container:has(.horizontal-scroll-container) .about-header {
   margin-top: 11rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  pointer-events: none;
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 10px;
+  width: fit-content;
 }
 
 .about-header {
@@ -43,6 +55,10 @@
   z-index: 10;
   position: relative;
   flex-shrink: 0;
+}
+
+#projects .about-header {
+  margin-top: 30px; /* Move projects header down by 30px */
 }
 
 .about-title {
@@ -118,7 +134,7 @@
 .about-content:has(.horizontal-scroll-container) {
   height: 400vh;
   overflow: visible;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
 }
 

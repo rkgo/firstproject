@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MagicBento from '../components/MagicBento';
 import HorizontalScrollCarousel from '../components/HorizontalScrollCarousel';
+import ProjectsGrid from '../components/ProjectsGrid';
 import "./about-stack.css";
 
 // Register ScrollTrigger plugin
@@ -19,7 +20,40 @@ export default function AboutStack({ id = "about", title = "about me" }) {
 
     if (!title || !container) return;
 
-    // Create a timeline for the title animation
+    // Simple fade-in animation for experience section
+    if (id === "experience") {
+      gsap.set(title, {
+        opacity: 0
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          markers: false
+        }
+      });
+
+      tl.to(title, {
+        opacity: 1,
+        duration: 1.2,
+        ease: "power2.out"
+      })
+      .to(title, {
+        textShadow: "0 0 30px rgba(111, 229, 228, 0.8), 0 0 60px rgba(111, 229, 228, 0.4)",
+        duration: 0.8,
+        ease: "power2.out"
+      }, "-=0.5");
+
+      return () => {
+        tl.kill();
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      };
+    }
+
+    // Original complex animation for other sections
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
@@ -98,7 +132,7 @@ export default function AboutStack({ id = "about", title = "about me" }) {
       particles.forEach(particle => particle.remove());
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  }, [id]);
 
   return (
     <section id={id} className="about-section" aria-label="About me">
@@ -107,24 +141,26 @@ export default function AboutStack({ id = "about", title = "about me" }) {
           <h2 className="about-title" ref={titleRef}>{title}</h2>
         </div>
 
-        <div className="about-content">
-          {id === "experience" ? (
-            <HorizontalScrollCarousel />
-          ) : (
-            <MagicBento
-              textAutoHide={false}
-              enableStars={true}
-              enableSpotlight={true}
-              enableBorderGlow={true}
-              enableTilt={true}
-              enableMagnetism={true}
-              clickEffect={true}
-              spotlightRadius={400}
-              particleCount={15}
-              glowColor="111, 229, 228"
-            />
-          )}
-        </div>
+                    <div className="about-content">
+                      {id === "experience" ? (
+                        <HorizontalScrollCarousel />
+                      ) : id === "projects" ? (
+                        <ProjectsGrid />
+                      ) : (
+                        <MagicBento
+                          textAutoHide={false}
+                          enableStars={true}
+                          enableSpotlight={true}
+                          enableBorderGlow={true}
+                          enableTilt={true}
+                          enableMagnetism={true}
+                          clickEffect={true}
+                          spotlightRadius={400}
+                          particleCount={15}
+                          glowColor="111, 229, 228"
+                        />
+                      )}
+                    </div>
       </div>
     </section>
   );

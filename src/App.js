@@ -29,7 +29,7 @@ function App() {
   // Update active section based on scroll position
               useEffect(() => {
                 const handleScroll = () => {
-                  const sections = ['home', 'about', 'experience', 'about2'];
+                  const sections = ['home', 'about', 'experience', 'projects'];
                   const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -63,7 +63,7 @@ function App() {
                         <Hero />
                         <AboutStack id="about" title="about me" />
                         <AboutStack id="experience" title="experience" />
-                        <AboutStack id="about2" title="about me" />
+                        <AboutStack id="projects" title="projects" />
                       </main>
           <Footer />
         </>

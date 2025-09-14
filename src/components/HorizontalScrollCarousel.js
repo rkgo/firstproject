@@ -5,6 +5,7 @@ import './HorizontalScrollCarousel.css';
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
   const [isHorizontalScrolling, setIsHorizontalScrolling] = useState(false);
+  const [hasExited, setHasExited] = useState(false);
   const horizontalProgress = useMotionValue(0);
   
   const { scrollYProgress } = useScroll({
@@ -19,16 +20,16 @@ const HorizontalScrollCarousel = () => {
       if (!element) return;
 
       const rect = element.getBoundingClientRect();
-      // Start horizontal scrolling when the experience section is properly in view
-      const isInView = rect.top <= 100 && rect.bottom >= window.innerHeight * 0.3;
+      const isInView = rect.top <= 0 && rect.bottom >= window.innerHeight;
 
-      if (isInView) {
-        // We're in the experience section - disable vertical scrolling immediately
+      if (isInView && !isHorizontalScrolling && !hasExited) {
+        // We're in the experience section and not already horizontal scrolling - start horizontal scrolling
         setIsHorizontalScrolling(true);
-      } else {
-        // We're not in the experience section - re-enable vertical scrolling
+      } else if (!isInView && isHorizontalScrolling) {
+        // We're not in the experience section and were horizontal scrolling - stop horizontal scrolling
         setIsHorizontalScrolling(false);
         horizontalProgress.set(0); // Reset horizontal progress when exiting
+        setHasExited(true); // Mark that we've exited to prevent restart
       }
     };
 
@@ -54,6 +55,25 @@ const HorizontalScrollCarousel = () => {
         const currentValue = horizontalProgress.get();
         const newProgress = Math.max(0, Math.min(1, currentValue + delta));
         horizontalProgress.set(newProgress);
+        
+        // Check if we've reached the beginning (Project 1) or end (Project 7)
+        if (newProgress <= 0.01 && e.deltaY < 0) {
+          // At the beginning and trying to scroll up - switch back to vertical
+          setIsHorizontalScrolling(false);
+          horizontalProgress.set(0); // Reset horizontal progress when exiting
+          // Scroll up to previous section
+          setTimeout(() => {
+            window.scrollBy(0, -window.innerHeight);
+          }, 100);
+        } else if (newProgress >= 0.85 && e.deltaY > 0) {
+          // At Project 7 (85% through) and trying to scroll down - switch back to vertical
+          setIsHorizontalScrolling(false);
+          setHasExited(true); // Mark that we've exited to prevent restart
+          horizontalProgress.set(1); // Reset horizontal progress when exiting
+          // Scroll down to next section immediately to get out of experience section
+          window.scrollBy(0, window.innerHeight * 2); // Scroll further to exit experience section
+        }
+        
         return false;
       }
     };
@@ -64,12 +84,26 @@ const HorizontalScrollCarousel = () => {
         if (e.keyCode === 38) { // Up arrow - move right
           e.preventDefault();
           const currentValue = horizontalProgress.get();
-          horizontalProgress.set(Math.min(1, currentValue + 0.01));
+          const newProgress = Math.min(1, currentValue + 0.01);
+          horizontalProgress.set(newProgress);
+          
+          // Check if we've reached the end and trying to go further
+          if (currentValue >= 0.85) {
+            setIsHorizontalScrolling(false);
+            horizontalProgress.set(1);
+          }
           return false;
         } else if (e.keyCode === 40) { // Down arrow - move left
           e.preventDefault();
           const currentValue = horizontalProgress.get();
-          horizontalProgress.set(Math.max(0, currentValue - 0.01));
+          const newProgress = Math.max(0, currentValue - 0.01);
+          horizontalProgress.set(newProgress);
+          
+          // Check if we've reached the beginning and trying to go further
+          if (currentValue <= 0.01) {
+            setIsHorizontalScrolling(false);
+            horizontalProgress.set(0);
+          }
           return false;
         } else if ([32, 33, 34, 35, 36].includes(e.keyCode)) { // Space, Page Up/Down, Home, End
           e.preventDefault();
@@ -174,3 +208,4 @@ const cards = [
 ];
 
 export default HorizontalScrollCarousel;
+ 
