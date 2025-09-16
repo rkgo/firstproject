@@ -1,28 +1,75 @@
+.projects-scroll-container {
+  background-color: var(--background);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.projects-section {
+  min-height: 100vh;
+  padding: 0rem 0;
+  margin-top: 50px;
+}
+
+.projects-section:last-of-type {
+  min-height: auto;
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
+}
+
+.projects-header {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0rem 0; /* Very tiny gap */
+  text-transform: lowercase;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-align: left;
+  padding: 0 2rem;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInFromLeft 1.2s ease-out 0.5s forwards;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .projects-masonry {
   position: relative;
-  padding: 2rem;
+  padding: 0 2rem;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  margin-top: 2rem; /* 300px more space from header (4rem + 3rem = 7rem) */
+  columns: 4;
+  column-gap: 0.2rem; /* Very tiny gap */
+  column-fill: balance;
+  margin-top: 30px; /* Moved up by 70px from previous 100px */
 }
 
 .project-box {
   background-color: var(--surface);
-  border: 3px solid var(--line);
+  border: none; /* No border */
   border-radius: 4px;
-  position: absolute;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 100%;
+  min-height: 100px;
+  break-inside: avoid;
+  margin-bottom: 0.2rem; /* Very tiny gap */
+  page-break-inside: avoid;
 }
 
 .project-box:hover {
   background-color: var(--surface-muted);
-  border-color: var(--accent-soft);
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
@@ -33,39 +80,110 @@
 }
 
 .project-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-primary);
   margin: 0 0 0.5rem 0;
-  line-height: 1.2;
+  line-height: 1.3;
+  text-transform: lowercase;
 }
 
 .project-subtitle {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin: 0;
-  line-height: 1.3;
-  opacity: 0.8;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 0.8rem 0;
+  line-height: 1.4;
+  text-transform: lowercase;
 }
 
-/* Responsive design */
+.project-description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.project-description p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 0 0 0.1rem 0; /* Very tiny gap */
+  line-height: 1.5;
+}
+
+.project-bullet-point {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.1rem; /* Very tiny gap */
+}
+
+.bullet {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+}
+
+.bullet-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* Responsive Design */
 @media (max-width: 1200px) {
   .projects-masonry {
-    padding: 1.5rem;
-    margin-top: 3rem;
+    columns: 3;
+  }
+  
+  .projects-header {
+    font-size: 4rem;
   }
 }
 
 @media (max-width: 768px) {
   .projects-masonry {
+    columns: 2;
+    padding: 0 1rem;
+  }
+  
+  .projects-header {
+    font-size: 3rem;
+    padding: 0 1rem;
+  }
+  
+  .project-box {
     padding: 1rem;
-    margin-top: 2rem;
+  }
+  
+  .project-title {
+    font-size: 1rem;
+  }
+  
+  .project-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .project-description p,
+  .bullet-text {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
   .projects-masonry {
-    padding: 0.5rem;
-    margin-top: 1.5rem;
+    columns: 1;
+  }
+  
+  .projects-header {
+    font-size: 2.5rem;
   }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutStack from './sections/AboutStack';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TargetCursor from './components/TargetCursor';
 import CircuitLoader from './components/CircuitLoader';
@@ -29,7 +30,7 @@ function App() {
   // Update active section based on scroll position
               useEffect(() => {
                 const handleScroll = () => {
-                  const sections = ['home', 'about', 'experience', 'projects'];
+                  const sections = ['home', 'about', 'experience', 'projects', 'contact'];
                   const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -63,7 +64,10 @@ function App() {
                         <Hero />
                         <AboutStack id="about" title="about me" />
                         <AboutStack id="experience" title="experience" />
-                        <AboutStack id="projects" title="projects" />
+                        <AboutStack id="projects" title="cool projects" />
+                        <section id="contact">
+                          <Contact />
+                        </section>
                       </main>
           <Footer />
         </>

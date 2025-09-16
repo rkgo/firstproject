@@ -27,44 +27,131 @@
   height: 525px;
   width: 525px;
   overflow: hidden;
-  background-color: #e5e5e5;
-  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
+  box-shadow: var(--shadow-low);
+  display: flex;
+  flex-direction: column;
 }
 
 .horizontal-scroll-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-med);
+  border-color: var(--accent-soft);
 }
 
-.horizontal-scroll-card-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  transition: transform 0.3s ease;
+.horizontal-scroll-card-content {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.horizontal-scroll-card:hover .horizontal-scroll-card-bg {
-  transform: scale(1.1);
-}
-
-.horizontal-scroll-card-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  display: grid;
-  place-content: center;
+.horizontal-scroll-card-header {
+  margin-bottom: 1rem;
 }
 
 .horizontal-scroll-card-title {
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
-  padding: 2rem;
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: white;
-  backdrop-filter: blur(8px);
-  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+  font-family: var(--font-display);
+}
+
+.horizontal-scroll-card-subtitle {
+  font-size: 0.9rem;
+  color: var(--accent);
   margin: 0;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.horizontal-scroll-card-subtitle.smaller-subtitle {
+  font-size: 0.85rem;
+}
+
+.horizontal-scroll-card-supervisor {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.25rem 0 0 0;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.horizontal-scroll-card-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.25rem 0 0 0;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.horizontal-scroll-card-body {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.horizontal-scroll-card-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.horizontal-scroll-card-bullet-point {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.horizontal-scroll-card-bullet-point .bullet {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.horizontal-scroll-card-bullet-point .bullet-text {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.horizontal-scroll-card-footer {
+  margin-top: auto;
+}
+
+.horizontal-scroll-card-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.horizontal-scroll-card-tech-tag {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(111, 229, 228, 0.3);
+  transition: all 0.2s ease;
+}
+
+.horizontal-scroll-card-tech-tag:hover {
+  background: var(--accent);
+  color: var(--black);
+  transform: translateY(-1px);
 }

@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MagicBento from '../components/MagicBento';
 import HorizontalScrollCarousel from '../components/HorizontalScrollCarousel';
 import ProjectsGrid from '../components/ProjectsGrid';
+import ProjectsGrid2 from '../components/ProjectsGrid2';
 import "./about-stack.css";
 
 // Register ScrollTrigger plugin
@@ -19,6 +20,11 @@ export default function AboutStack({ id = "about", title = "about me" }) {
     const container = containerRef.current;
 
     if (!title || !container) return;
+
+    // Skip animation for projects sections - they have their own headers
+    if (id === "projects" || id === "projects2" || id === "blank") {
+      return;
+    }
 
     // Simple fade-in animation for experience section
     if (id === "experience") {
@@ -146,6 +152,10 @@ export default function AboutStack({ id = "about", title = "about me" }) {
                         <HorizontalScrollCarousel />
                       ) : id === "projects" ? (
                         <ProjectsGrid />
+                      ) : id === "projects2" ? (
+                        <ProjectsGrid2 />
+                      ) : id === "blank" ? (
+                        <div className="blank-page"></div>
                       ) : (
                         <MagicBento
                           textAutoHide={false}

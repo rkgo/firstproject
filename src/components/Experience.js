@@ -16,7 +16,7 @@ const Experience = () => {
         'Reconstructed detailed 2D Raman maps by controlling nanoscale movements through piezoelectric positioners',
         'Identified flakes, interfaces, and heterogeneities across samples',
         'Integrated LabVIEW, nanopositioners, and LabSpec software into a unified system',
-        'Enabled communication between hardware control and spectral data acquisition from 1.7 – 300 K'
+        'Enabled communication between hardware control and spectral data acquisition from 1.7–300 K'
       ]
     },
     {

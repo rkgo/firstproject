@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import "./TargetCursor.css";
 
 const TargetCursor = ({
-  targetSelector = ".cursor-target",
+  targetSelector = ".dock-item, .dock-label, .dock-icon, .contact-container, .contact-content, .contact-title, .contact-info, .contact-form, .contact-form input, .contact-form textarea, .contact-form button, .form-group, .form-group input, .form-group textarea, .form-group button, .form-group label, .submit-button, .social-icon",
   spinDuration = 2,
   hideDefaultCursor = true,
 }) => {
@@ -205,6 +205,8 @@ const TargetCursor = ({
 
       const target = allTargets[0] || null;
       if (!target || !cursorRef.current || !cornersRef.current) return;
+
+      console.log('Cursor targeting:', target.className, target.tagName, target);
 
       if (activeTarget === target) return;
 

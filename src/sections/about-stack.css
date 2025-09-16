@@ -482,3 +482,21 @@
   }
 }
 
+#projects .about-header,
+#projects2 .about-header {
+  display: none; /* Hide the bouncing cyan header for projects sections */
+}
+
+#blank .about-header {
+  display: none; /* Hide header for blank page */
+}
+
+.blank-page {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

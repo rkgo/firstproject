@@ -17,17 +17,17 @@ const cardData = [
               details: [
         "<strong>honors & programs:</strong> fulton undergraduate research initiative, engineers without borders, grand challenges scholars program, dean's list, fulton accelerated community engagement",
         "<strong>coursework:</strong> electromagnetics I, electromagnetics II*, power systems*, circuits I, circuits II*, digital design, random signal analysis*, signals and systems*, linear algebra, differential equations, calculus I-III, physics I-III",
-        "<strong>engineering:</strong> matlab, ltspice, labview, arduino, gtkwave, digital, onshape",
+        "<strong>engineering:</strong> matlab, ltspice, labview, arduino, bluebeam, gtkwave, digital, onshape",
         "<strong>programming & libraries:</strong> python, c++, pandas, selenium, sql, javascript, html/css"
       ]
   },
             {
             color: "#060010",
-            title: "other cool stuff",
+            title: "other stuff",
             label: "interests",
             details: [
               "make projects like this",
-              "grew a $150k portfolio with consistent 12-15% annual returns",
+              "grew a $150k portfolio with consistent 17-20% annual returns",
               "sometimes play on the asu cricket team",
               "~1700 elo on chess.com"
             ]
@@ -37,7 +37,7 @@ const cardData = [
     title: "carnatic keyboardist and mridangist",
     label: "music",
     details: [
-      "did hundreds of concerts/performances across the us and india",
+      "did over one hundred concerts/performances across the us and india",
       "raised money for charity through initiatives like sankara netralaya",
       "won prizes at carnatic competitions and festivals",
       "accompanied arangetrams in the dmv area"

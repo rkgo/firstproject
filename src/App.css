@@ -1,6 +1,11 @@
 /* Dark Portfolio Design System */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Theme Colors */
   --bg: #030008;
@@ -578,6 +583,13 @@ html {
   scroll-snap-stop: always;
   min-height: 100vh;
   width: 100%;
+}
+
+/* Disable scroll snap for footer */
+footer {
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+  min-height: auto !important;
 }
 
 /* ===== SMOOTH SCROLLING ===== */
