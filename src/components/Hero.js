@@ -52,7 +52,7 @@ const Hero = () => {
             className="hero__circular"
           >
             <CircularText
-              text="ELECTRICAL ENGINEER - MUSICIAN - DEVELOPER - "
+              text="electrical engineer - musician - developer - "
               onHover="speedUp"
               spinDuration={25}
               className="hero-circular-text"
